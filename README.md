@@ -28,5 +28,8 @@ net start winnat;
 
 ```
 choco install robo3t.portable
+dotnet .\SM-Post\Post.Cmd\Post.Cmd.Api\bin\Debug\net6.0\Post.Cmd.Api.dll --environment=MyEnvironment 
+
+
 
 
