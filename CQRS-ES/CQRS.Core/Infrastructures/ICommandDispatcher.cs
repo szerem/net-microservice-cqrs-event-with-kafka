@@ -1,5 +1,4 @@
 using CQRS.Core.Commands;
-using Microsoft.VisualBasic;
 
 namespace CQRS.Core.Infrastructures
 {
