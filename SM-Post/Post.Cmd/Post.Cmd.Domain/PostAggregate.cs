@@ -9,6 +9,9 @@ public class PostAggregate : AggregateRoot
     private string _author;
     private readonly Dictionary<Guid, (string, string)> _comments = new();
 
+    public PostAggregate()
+    {
+    }
     public PostAggregate(Guid id, string author, string message)
     {
         RaiseEvent(new PostCreatedEvent
