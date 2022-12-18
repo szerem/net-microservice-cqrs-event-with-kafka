@@ -2,7 +2,7 @@ using Post.Query.Domain.Entities;
 
 namespace Post.Query.Domain.Repositories
 {
-    public class ICommentRepository
+    public interface ICommentRepository
     {
         Task CreateAsync(CommentEntity comment);
         Task UpdateAsync(CommentEntity comment);
