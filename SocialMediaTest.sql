@@ -12,3 +12,7 @@ BEGIN
     EXEC sp_adduser 'SMUser', 'SMUser', 'db_owner';
 END
 
+
+-- use master 
+-- go
+-- drop DATABASE SocialMedia;
