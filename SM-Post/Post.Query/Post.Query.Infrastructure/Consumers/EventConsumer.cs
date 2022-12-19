@@ -18,7 +18,7 @@ namespace Post.Query.Infrastructure.Consumers
             _eventHandler = eventHandler;
         }
 
-        public void Consumer(string topic)
+        public void Consume(string topic)
         {
             using var consumer = new ConsumerBuilder<string, string>(_config)
             .SetKeyDeserializer(Deserializers.Utf8)
