@@ -1,4 +1,3 @@
-using Castle.Core.Logging;
 using CQRS.Core.Consumers;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
