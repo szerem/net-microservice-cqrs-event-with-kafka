@@ -8,6 +8,7 @@ namespace Post.Query.Domain.Entities
     {
         [Key]
         public Guid PostId { get; set; }
+        [MaxLength(64)]
         public string Author { get; set; }
         public DateTime DatePosted { get; set; }
         public string Message { get; set; }
