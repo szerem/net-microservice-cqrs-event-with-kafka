@@ -1,3 +1,4 @@
+using Microsoft.Extensions.Logging;
 using Post.Common.Events;
 using Post.Query.Domain.Entities;
 using Post.Query.Domain.Repositories;
@@ -8,8 +9,10 @@ namespace Post.Query.Infrastructure.Handlers
     {
         private readonly IPostRepository _postRepository;
         private readonly ICommentRepository _commentRepository;
-        public EventHandler(IPostRepository postRepository, ICommentRepository commentRepository)
+        private readonly ILogger<EventHandler> _logger;
+        public EventHandler(ILogger<EventHandler> logger, IPostRepository postRepository, ICommentRepository commentRepository)
         {
+            _logger = logger;
             _commentRepository = commentRepository;
             _postRepository = postRepository;
         }
@@ -25,6 +28,7 @@ namespace Post.Query.Infrastructure.Handlers
             };
 
             await _postRepository.CreateAsync(post);
+            _logger.LogInformation(AppLogEvents.Create, "{name}={value}", nameof(PostEntity.PostId), post.PostId);
         }
 
         public async Task On(MessageUpdatedEvent @event)

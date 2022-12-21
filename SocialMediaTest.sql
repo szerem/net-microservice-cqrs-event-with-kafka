@@ -16,3 +16,6 @@ END
 -- use master 
 -- go
 -- drop DATABASE SocialMedia;
+
+
+select * from Post where Author = 'TEST';

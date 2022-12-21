@@ -1,0 +1,10 @@
+###
+curl -X 'POST' \
+  'https://localhost:5014/api/v1/NewPost' \
+  -H 'accept: */*' \
+  -H 'Content-Type: application/json' \
+  -d '{
+  "author": "TEST",
+  "message": "message message message"
+}'
+  
