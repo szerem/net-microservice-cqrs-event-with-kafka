@@ -39,14 +39,14 @@ namespace CQRS.Core.Domain
 
         protected void RaiseEvent(BaseEvent @event)
         {
-            ApplyChange(@event, false);
+            ApplyChange(@event, true);
         }
 
         public void ReplayEvent(IEnumerable<BaseEvent> events)
         {
             foreach (var @event in events)
             {
-                ApplyChange(@event, true);
+                ApplyChange(@event, false);
             }
  
         }        

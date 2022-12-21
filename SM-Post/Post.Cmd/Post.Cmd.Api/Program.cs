@@ -56,5 +56,8 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 
 app.MapControllers();
-
+app.MapGet("/", () => $@"{System.AppDomain.CurrentDomain.FriendlyName} is working.
+{string.Join(Environment.NewLine, app.Urls.Select(x => x + "/swagger/index.html"))}
+ASPNETCORE_ENVIRONMENT: {Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT")}
+");
 app.Run();
