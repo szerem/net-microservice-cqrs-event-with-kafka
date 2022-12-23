@@ -9,6 +9,7 @@ using Post.Query.Infrastructure.Handlers;
 using Post.Query.Infrastructure.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
+builder.WebHost.UseUrls();
 
 // Add services to the container.
 // Action<DbContextOptionsBuilder> configureDbContext = ( o => o.UseSqlServer(builder.Configuration.GetConnectionString("SqlServer")));

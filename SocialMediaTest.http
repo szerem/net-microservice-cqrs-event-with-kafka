@@ -5,6 +5,13 @@ curl -X 'POST' \
   -H 'Content-Type: application/json' \
   -d '{
   "author": "TEST",
-  "message": "message message message"
+  "message": "BEGIN
+    request_id: {{$guid}},
+    updated_at: {{$timestamp}},
+    created_at: {{$timestamp -1 d}},
+    review_count: {{$randomInt 5 200}},
+    custom_date: {{$datetime 'YYYY-MM-DD'}},
+    local_custom_date: {{$localDatetime iso8601}}
+  END
+  "
 }'
-  

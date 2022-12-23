@@ -28,7 +28,7 @@ namespace Post.Query.Infrastructure.Handlers
             };
 
             await _postRepository.CreateAsync(post);
-            _logger.LogInformation(AppLogEvents.Create, "{name}={value}", nameof(PostEntity.PostId), post.PostId);
+            _logger.LogInformation(AppLogEvents.Create, "{id} {message} handled.", post.PostId, post.Message);
         }
 
         public async Task On(MessageUpdatedEvent @event)

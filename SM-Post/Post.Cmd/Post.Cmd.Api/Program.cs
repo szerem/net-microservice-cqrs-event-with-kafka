@@ -13,6 +13,7 @@ using Post.Cmd.Infrastructure.Stores;
 
 
 var builder = WebApplication.CreateBuilder(args);
+builder.WebHost.UseUrls();
 
 // Add services to the container.
 builder.Services.Configure<MongoDBConfig>(builder.Configuration.GetSection(nameof(MongoDBConfig)));

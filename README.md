@@ -25,9 +25,12 @@ netstat -ano | findstr "PID: 1433"
 & 'C:\Program Files\Docker\Docker\DockerCli.exe' -SwitchDaemon;
 net stop winnat;
 docker start sql-container;
+docker start mongo-container;
 net start winnat;
 
 ```
+<!-- docker compose start -->
+
 choco install robo3t.portable
 dotnet .\SM-Post\Post.Cmd\Post.Cmd.Api\bin\Debug\net6.0\Post.Cmd.Api.dll --environment=MyEnvironment 
 
